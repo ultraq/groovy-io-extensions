@@ -22,3 +22,9 @@ Add a dependency to your project with the following co-ordinates:
 
 Check the [project releases](https://github.com/ultraq/groovy-io-extensions/releases)
 for a list of available versions.
+
+
+API
+---
+
+Browse the online groovydocs here: https://javadoc.io/doc/nz.net.ultraq.groovy/groovy-io-extensions
