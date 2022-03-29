@@ -27,6 +27,23 @@ import groovy.transform.stc.SimpleType
 class InputStreamExtensions {
 
 	/**
+	 * Convenience method for calling {@link InputStream#mark}, executing the
+	 * closure, and then calling {@link InputStream#reset} before returning.
+	 * 
+	 * @param self
+	 * @param readLimit
+	 * @param closure
+	 * @return
+	 */
+	static <T> T markAndReset(InputStream self, int readLimit, Closure<T> closure) {
+
+		self.mark(readLimit)
+		def result = closure()
+		self.reset()
+		return result
+	}
+
+	/**
 	 * Wrap an input stream with a buffered reader and invoke the usual
 	 * {@code withReader} method over it.
 	 * 

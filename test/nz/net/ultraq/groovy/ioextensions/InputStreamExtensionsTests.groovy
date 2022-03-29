@@ -27,6 +27,20 @@ class InputStreamExtensionsTests extends Specification {
 
 	def inputStream = new ByteArrayInputStream([1, 2, 3, 4] as byte[])
 
+	def "markAndReset - calls mark, executes the closure, and calls reset"() {
+		given:
+			def mockStream = Mock(InputStream)
+			def response = 'Hello!'
+			Closure closure = Mock()
+			closure.call() >> response
+		when:
+			def result = mockStream.markAndReset(2, closure)
+		then:
+			1 * mockStream.mark(2)
+			1 * mockStream.reset()
+			assert result == response
+	}
+
 	def "withBufferedReader - Returns the result of the closure"() {
 		given:
 			def response = 'result'
