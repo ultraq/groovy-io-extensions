@@ -38,10 +38,14 @@ class InputStreamExtensions {
 	static <T> T markAndReset(InputStream self, int readLimit,
 		@ClosureParams(value = SimpleType, options = 'java.io.InputStream') Closure<T> closure) {
 
-		self.mark(readLimit)
-		def result = closure(self)
-		self.reset()
-		return result
+		try {
+			self.mark(readLimit)
+			def result = closure(self)
+			return result
+		}
+		finally {
+			self.reset()
+		}
 	}
 
 	/**

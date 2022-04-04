@@ -50,6 +50,22 @@ class InputStreamExtensionsTests extends Specification {
 			1 * closure.call(inputStream)
 	}
 
+	def "markAndReset - Calls reset when an exception occurs"() {
+		given:
+			def mockStream = Mock(InputStream)
+			Closure closure = Mock() {
+				call(_) >> {
+					throw new Exception('Testing')
+				}
+			}
+		when:
+			mockStream.markAndReset(2, closure)
+		then:
+			1 * mockStream.mark(2)
+			thrown(Exception)
+			1 * mockStream.reset()
+	}
+
 	def "withBufferedReader - Returns the result of the closure"() {
 		given:
 			def response = 'result'

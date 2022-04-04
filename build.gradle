@@ -24,7 +24,7 @@ apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.0.1/gradl
 apply from: 'https://raw.githubusercontent.com/ultraq/gradle-support/4.0.1/maven-publish-support.gradle'
 
 description = 'A collection of Groovy extensions for IO operations'
-version = '0.1.1'
+version = '0.1.2-SNAPSHOT'
 sourceCompatibility = 1.8
 group = 'nz.net.ultraq.groovy'
 year = '2022'
