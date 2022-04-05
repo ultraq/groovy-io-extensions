@@ -17,6 +17,7 @@
 package nz.net.ultraq.groovy.ioextensions
 
 import groovy.transform.stc.ClosureParams
+import groovy.transform.stc.FromString
 import groovy.transform.stc.SimpleType
 
 /**
@@ -35,8 +36,8 @@ class InputStreamExtensions {
 	 * @param closure
 	 * @return
 	 */
-	static <T> T markAndReset(InputStream self, int readLimit,
-		@ClosureParams(value = SimpleType, options = 'java.io.InputStream') Closure<T> closure) {
+	static <I extends InputStream, T> T markAndReset(I self, int readLimit,
+		@ClosureParams(value = FromString, options = "I") Closure<T> closure) {
 
 		try {
 			self.mark(readLimit)
