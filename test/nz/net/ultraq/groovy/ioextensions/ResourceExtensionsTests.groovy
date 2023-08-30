@@ -25,7 +25,7 @@ import spock.lang.Specification
  */
 class ResourceExtensionsTests extends Specification {
 
-	def "Is a shortcut to ClassLoader.getResourceAsStream"() {
+	def "#getResourceAsStream - Is a shortcut to ClassLoader.getResourceAsStream"() {
 		given:
 			def resourcePath = 'nz/net/ultraq/groovy/ioextensions/ResourceExtensionsTestsFile.txt'
 		when:
@@ -34,7 +34,7 @@ class ResourceExtensionsTests extends Specification {
 			assert result.text == this.class.classLoader.getResourceAsStream(resourcePath).text
 	}
 
-	def "Throws an exception if the path leads to nothing"() {
+	def "#getResourceAsStream - Throws an exception if the path leads to nothing"() {
 		given:
 			def resourcePath = 'path/to/nothing'
 		when:
@@ -42,5 +42,14 @@ class ResourceExtensionsTests extends Specification {
 		then:
 			def ex = thrown(IllegalArgumentException)
 			assert ex.message == "Resource not found: ${resourcePath}"
+	}
+	
+	def "#getResourceAsText - Is a shortcut to getResourceAsStream().getText()"() {
+		given:
+			def resourcePath = 'nz/net/ultraq/groovy/ioextensions/ResourceExtensionsTestsFile.txt'
+		when:
+			def result = getResourceAsText(resourcePath)
+		then:
+			assert result == getResourceAsStream(resourcePath).text
 	}
 }

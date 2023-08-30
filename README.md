@@ -4,7 +4,7 @@ groovy-io-extensions
 
 [![Build Status](https://github.com/ultraq/groovy-io-extensions/actions/workflows/build.yml/badge.svg)](https://github.com/ultraq/groovy-io-extensions/actions)
 [![codecov](https://codecov.io/gh/ultraq/groovy-io-extensions/branch/main/graph/badge.svg?token=4W2YJE2V3G)](https://codecov.io/gh/ultraq/groovy-io-extensions)
-[![Maven Central](https://img.shields.io/maven-central/v/nz.net.ultraq.groovy/groovy-io-extensions.svg?maxAge=3600)](http://search.maven.org/#search|ga|1|g%3A%22nz.net.ultraq.groovy%22%20AND%20a%3A%22groovy-io-extensions%22)
+[![Maven Central](https://img.shields.io/maven-central/v/nz.net.ultraq.groovy/groovy-io-extensions.svg?maxAge=3600)](https://central.sonatype.com/artifact/nz.net.ultraq.groovy/groovy-io-extensions)
 
 A collection of Groovy extensions for IO operations.
 

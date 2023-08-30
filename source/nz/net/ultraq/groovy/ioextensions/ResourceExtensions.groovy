@@ -38,4 +38,17 @@ class ResourceExtensions {
 		}
 		throw new IllegalArgumentException("Resource not found: ${resourcePath}")
 	}
+
+	/**
+	 * A combination {@link #getResourceAsStream} followed by a {@code .getText()}
+	 * call.
+	 * 
+	 * @param self
+	 * @param resourcePath
+	 * @return
+	 */
+	static String getResourceAsText(Object self, String resourcePath) {
+		
+		return getResourceAsStream(self, resourcePath).text
+	}
 }
