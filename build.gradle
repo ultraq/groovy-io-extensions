@@ -33,6 +33,8 @@ dependencies {
 	implementation 'org.apache.groovy:groovy:4.0.14'
 
 	testImplementation 'org.spockframework:spock-core:2.3-groovy-4.0'
+	testImplementation 'net.bytebuddy:byte-buddy:1.14.7'
+	testImplementation 'org.objenesis:objenesis:3.3'
 }
 
 test {
