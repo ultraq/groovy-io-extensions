@@ -16,9 +16,9 @@ Minimum of Java 8 required.
 
 Add a dependency to your project with the following co-ordinates:
 
-- GroupId: `nz.net.ultraq.groovy`
-- ArtifactId: `groovy-io-extensions`
-- Version: `0.1.3`
+ - GroupId: `nz.net.ultraq.groovy`
+ - ArtifactId: `groovy-io-extensions`
+ - Version: `0.1.3`
 
 Check the [project releases](https://github.com/ultraq/groovy-io-extensions/releases)
 for a list of available versions.
