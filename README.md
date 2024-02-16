@@ -8,6 +8,10 @@ groovy-io-extensions
 
 A collection of Groovy extensions for IO operations.
 
+> I'm planning to fold this project into [groovy-extensions](https://github.com/ultraq/groovy-extensions),
+> and so all the extensions provided by this project, and future development,
+> will take place there.
+
 
 Installation
 ------------
